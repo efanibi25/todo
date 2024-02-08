@@ -60,6 +60,7 @@ outline: none;
     margin: auto;
     text-align: center;
     justify-content: center;
+    margin-top:10%;
     }
 
 .todo-warning{
@@ -69,4 +70,13 @@ outline: none;
 .todo-input-container{
     display:flex;
     height:10%;
+    width:90%;
+    margin:auto;
+    justify-content: center;
+}
+
+.todo-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
