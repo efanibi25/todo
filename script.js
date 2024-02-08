@@ -6,12 +6,14 @@ document.addEventListener("DOMContentLoaded", function() {
   let todoInput = document.querySelector(".todo-input");
         let todoButton = document.querySelector(".todo-button");
         let todoList = document.querySelector(".todo-list");
+        let todoWarning=document.querySelector(".todo-warning");
 
         todoButton.addEventListener("click", function() {
             const task = todoInput.value.trim();
             if(!task){
                 return
             }
+            todoWarning.style.display = "none";
 
             let todoItem = document.createElement("li");
             todoItem.className = "todo-item";
@@ -41,6 +43,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
             todoRemove.addEventListener("click", function() {
                 todoList.removeChild(todoItem);
+                if (Array.from(todoList).length==0){
+                    todoWarning.style.display = "block";
+                }
             });
 
             

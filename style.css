@@ -25,17 +25,22 @@ margin-right: 10px;
 }
 
 .todo-button {
-padding: 10px;
 background-color: #4CAF50;
 color: white;
 border: none;
 cursor: pointer;
+height:70%;
+align-self:center;
+margin-left:10px;
+
 }
 
 .todo-input {
 display: flex;
 align-items: center;
-margin-bottom: 20px;
+align-self:center;
+height:80%;
+width:70%
 }
 
 .todo-input input {
@@ -43,4 +48,25 @@ flex: 1;
 padding: 10px;
 border: 1px solid #ccc;
 outline: none;
+}
+
+
+.todo-list-box{
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    width:80%;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    }
+
+.todo-warning{
+    font-size: 15px;
+    font-weight: bold;
+}
+.todo-input-container{
+    display:flex;
+    height:10%;
 }
