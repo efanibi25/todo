@@ -3,11 +3,12 @@
 
 
 document.addEventListener("DOMContentLoaded", function() {
-  let todoInput = document.querySelector(".todo-input");
-        let todoButton = document.querySelector(".todo-button");
-        let todoList = document.querySelector(".todo-list");
-        let todoWarning=document.querySelector(".todo-warning");
+        function todo(){
 
+            let todoInput = document.querySelector(".todo-input");
+        let todoButton = document.querySelector(".save-button");
+        let todoList = document.querySelector(".todo-list");
+        let todoWarning=document.querySelector(".todo-warning");  
         todoButton.addEventListener("click", function() {
             const task = todoInput.value.trim();
             if(!task){
@@ -50,4 +51,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
             
         });
+        }
+        function modal(){
+            var myModal = document.getElementById('myModal')
+var myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', function () {
+  myInput.focus()
+})
+        }
+        todo()
+        // modal()
+      
+
+
 });
