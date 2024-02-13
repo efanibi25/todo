@@ -6,19 +6,43 @@
     </script>
 </head>
 <body>
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Todo</h5>
+          <h5 class="modal-title" id="addModalLabel">Add Item</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <input type="text" class="todo-input" placeholder="Enter a new task">
+            <input type="text" class="todo-input" id="add-input" placeholder="Enter a new task">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary save-button" data-bs-dismiss="modal">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Manage Item</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <label for="remove-input">Edit: </label>
+            <input type="text" class="todo-input" id="remove-input" placeholder="Enter a new task">
+        </div>
+        <div class="remove-module-footer">
+          <button type="button" class="btn btn-primary btn btn-danger remove-button" data-bs-dismiss="modal" >Remove</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary save-button save-button-remove" data-bs-dismiss="modal">Save changes</button>
+  
+        </div>
+       
         </div>
       </div>
     </div>
@@ -31,7 +55,7 @@
             <span class="todo-warning">No Todo Items added</span>
             <ul class="todo-list"></ul>
         </div>
-        <button class="todo-button" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Todo</button>
+        <button class="todo-button" data-bs-toggle="modal" data-bs-target="#addModal">Add Todo</button>
 
         
     </div>

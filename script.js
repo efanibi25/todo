@@ -29,7 +29,12 @@ document.addEventListener("DOMContentLoaded", function() {
             //remove button
             const todoRemove = document.createElement("button");
             todoRemove.className = "todo-remove";
-            todoRemove.textContent = "x";
+            todoRemove.textContent = "Edit";
+            // todoRemove.setAttribute("data-bs-toggle","modal")
+            // todoRemove.setAttribute("data-bs-target","#editModal")
+            
+
+
     
             todoItem.appendChild(todoCheckbox);
             todoItem.appendChild(todoText);
@@ -42,26 +47,27 @@ document.addEventListener("DOMContentLoaded", function() {
                 todoText.className = (todoText.className=="todo-text-complete"?"todo-text":"todo-text-complete");
             });
 
-            todoRemove.addEventListener("click", function() {
-                todoList.removeChild(todoItem);
-                if (Array.from(todoList).length==0){
-                    todoWarning.style.display = "block";
-                }
+            todoRemove.addEventListener("click", function(event) {
+
+            new bootstrap.Modal( document.querySelector('#editModal'), {
+                  }).show(event.target)
+            
             });
 
             
         });
         }
         function modal(){
-            var myModal = document.getElementById('myModal')
-var myInput = document.getElementById('myInput')
+            document.querySelector('#editModal').addEventListener('shown.bs.modal', function (event) {
+                document.querySelector("#remove-input").value=event.relatedTarget.parentElement.querySelector(".todo-text").textContent
+                document.querySelector(".remove-button").addEventListener('click', ()=> event.relatedTarget.parentNode.remove(), { once: true });
+                document.querySelector(".save-button-remove").addEventListener('click', ()=> event.relatedTarget.parentElement.querySelector(".todo-text").textContent=document.querySelector("#remove-input").value, { once: true });
 
-myModal.addEventListener('shown.bs.modal', function () {
-  myInput.focus()
+           
 })
         }
         todo()
-        // modal()
+        modal()
       
 
 

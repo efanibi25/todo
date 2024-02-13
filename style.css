@@ -35,9 +35,11 @@ margin-left:10px;
 margin-top:2%;
 
 }
+.todo-remove{
+    background-color:red;
+}
 
 .todo-input {
-display: flex;
 align-items: center;
 align-self:center;
 height:80%;
@@ -81,3 +83,16 @@ outline: none;
     flex-direction: column;
     align-items: center;
 }
+
+.btn-danger {
+    margin-left: 10px; /* Push the "Remove" button to the beginning */
+  }
+  
+  .save-button {
+    margin-left: auto; /* Push the "Save changes" button to the end */
+  }
+  .remove-module-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
